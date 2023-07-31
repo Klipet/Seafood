@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import com.example.dataterminal.R
 
 
-
-class StartPageFragment : Fragment() {
+class Login : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,8 +21,9 @@ class StartPageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_start_page, container, false)
+        return inflater.inflate(R.layout.fragment_splash_info, container, false)
     }
+
 
 
 }

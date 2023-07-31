@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/splash_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CEE7EA"
-    tools:context=".fragment.Login">
-
+    tools:context=".SpalshInfoFree"
+    android:background="#CEE7EA">
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
         android:scaleType="center"
-        android:src="@drawable/pebble_people_meditating"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/wormies_online_treats"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSkipSplasFree"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvSkipSplas"
+        android:id="@+id/tvSkipSplasFree"
         android:layout_width="86dp"
         android:layout_height="38dp"
+        android:layout_marginTop="14dp"
         android:text="Skip"
+        android:onClick="btSkipFree"
         android:textSize="20dp"
         android:textStyle="bold"
         android:typeface="normal"
@@ -34,6 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="250dp"
         android:background="#FBFDFF"
@@ -47,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="31dp"
             android:fontFamily="@font/patua_one"
-            android:text="Make it easier for you"
+            android:text="Call us where ever you are"
             android:textColor="#3B4161"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,17 +54,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/btNextSpalshFree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="33dp"
+            android:onClick="btNextSplashFree"
             android:src="@drawable/next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/btNextSplash"
+            android:id="@+id/textView5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="46dp"
@@ -73,10 +73,23 @@
             android:layout_marginEnd="45dp"
             android:fontFamily="@font/patua_one"
             android:gravity="center_horizontal|top"
-            android:text="We are here ready serve you order 24 hour nonstop, so you can enjoy your holidays"
+            android:text="Tell us your location and we will bring your food with pleasure"
             android:textColor="#878F95"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/imBeakSplashFree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="btReturnFree"
+        android:layout_marginTop="14dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

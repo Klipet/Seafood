@@ -27,6 +27,15 @@
         android:theme="@style/Theme.DataTerminal"
         tools:targetApi="31">
         <activity
+            android:name=".SpalshInfoFree"
+            android:exported="false" />
+        <activity
+            android:name=".SplashInfoTwo"
+            android:exported="false" />
+        <activity
+            android:name=".SplashInfo"
+            android:exported="false" />
+        <activity
             android:name=".LoginRegister"
             android:exported="false" />
         <activity

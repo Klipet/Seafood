@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/splash_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CEE7EA"
-    tools:context=".fragment.Login">
-
+    tools:context=".SplashInfoTwo"
+    android:background="#CEE7EA">
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:scaleType="center"
-        android:src="@drawable/pebble_people_meditating"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/munchies_bowl"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSkipSplasTwoo"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvSkipSplas"
+        android:id="@+id/tvSkipSplasTwoo"
         android:layout_width="86dp"
         android:layout_height="38dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
         android:text="Skip"
+        android:onClick="btSkipTwo"
         android:textSize="20dp"
         android:textStyle="bold"
         android:typeface="normal"
@@ -34,6 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="250dp"
         android:background="#FBFDFF"
@@ -42,12 +42,12 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="31dp"
             android:fontFamily="@font/patua_one"
-            android:text="Make it easier for you"
+            android:text="Healty food first "
             android:textColor="#3B4161"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,28 +55,44 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/btNextTwoo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="33dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="btNextSplashTwo"
             android:src="@drawable/next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/btNextSplash"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="46dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="45dp"
             android:fontFamily="@font/patua_one"
             android:gravity="center_horizontal|top"
-            android:text="We are here ready serve you order 24 hour nonstop, so you can enjoy your holidays"
+            android:text="Copy We always serve best food you, and give you healty food recomendation. If you want junk food, please dont tell captain"
             android:textColor="#878F95"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/imBeakSplashTwoo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="btReturnTwo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
