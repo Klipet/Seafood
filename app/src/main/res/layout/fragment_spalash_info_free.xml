@@ -4,90 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CEE7EA"
     tools:context=".fragment.Register">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <EditText
+        android:id="@+id/edTexPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:scaleType="center"
-        android:src="@drawable/wormies_online_treats"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_text"
+        android:ems="15"
+        android:fontFamily="@font/patua_one"
+        android:gravity="center_vertical"
+        android:hint="Create a Username"
+        android:inputType="text"
+        android:scrollbarSize="15sp"
+        android:textAlignment="center"
+        android:textColor="#6E7191"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSkipSplasFree"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlCompat" />
 
-    <TextView
-        android:id="@+id/tvSkipSplasFree"
-        android:layout_width="86dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="14dp"
-        android:text="Skip"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
-        android:background="#FBFDFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="31dp"
-            android:fontFamily="@font/patua_one"
-            android:text="Call us where ever you are"
-            android:textColor="#3B4161"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/btNextSpalshFree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="33dp"
-            android:src="@drawable/next"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="46dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="45dp"
-            android:fontFamily="@font/patua_one"
-            android:gravity="center_horizontal|top"
-            android:text="Tell us your location and we will bring your food with pleasure"
-            android:textColor="#878F95"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageButton
-        android:id="@+id/imBeakSplashFree"
+    <EditText
+        android:id="@+id/edUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="14dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/baseline_arrow_back_ios_24"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_text"
+        android:ems="15"
+        android:fontFamily="@font/patua_one"
+        android:gravity="center_vertical"
+        android:hint="Confirm Password"
+        android:inputType="text"
+        android:scrollbarSize="15sp"
+        android:textAlignment="center"
+        android:textColor="#6E7191"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/itCrPassword"
+        tools:ignore="RtlCompat" />
 
+    <EditText
+        android:id="@+id/itCrPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_text"
+        android:ems="15"
+        android:fontFamily="@font/patua_one"
+        android:gravity="center_vertical"
+        android:hint="Create a Password"
+        android:inputType="text"
+        android:scrollbarSize="15sp"
+        android:textAlignment="center"
+        android:textColor="#6E7191"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTexPassword"
+        tools:ignore="RtlCompat" />
+
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/butom_conf_log"
+        android:fontFamily="@font/patua_one"
+        android:text="Create Account"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edUserName" />
 </androidx.constraintlayout.widget.ConstraintLayout>

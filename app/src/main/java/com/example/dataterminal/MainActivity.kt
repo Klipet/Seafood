@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         println(appCounter.getLaunchCountState())
 
 
-        if (appCounter.getLaunchCountState() > 6){
+        if (appCounter.getLaunchCountState() > 1){
             Handler().postDelayed({
                 val intent = Intent(this, LoginRegister::class.java)
                 startActivity(intent)

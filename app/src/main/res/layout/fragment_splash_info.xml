@@ -6,77 +6,65 @@
     android:id="@+id/splash_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CEE7EA"
-    tools:context=".fragment.Login">
+    tools:context=".fragment.Login" >
 
-    <ImageView
-        android:id="@+id/imageView"
+
+    <EditText
+        android:id="@+id/edTexPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="center"
-        android:src="@drawable/pebble_people_meditating"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_text"
+        android:ems="15"
+        android:fontFamily="@font/patua_one"
+        android:gravity="center_vertical"
+        android:hint="Password"
+        android:inputType="text"
+        android:scrollbarSize="15sp"
+        android:textAlignment="center"
+        android:textColor="#6E7191"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edUserName"
+        tools:ignore="RtlCompat" />
+
+    <EditText
+        android:id="@+id/edUserName"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_text"
+        android:ems="15"
+        android:fontFamily="@font/patua_one"
+        android:gravity="center_vertical"
+        android:hint="Username"
+        android:inputType="text"
+        android:scrollbarSize="15sp"
+        android:textAlignment="center"
+        android:textColor="#6E7191"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:ignore="RtlCompat" />
 
-    <TextView
-        android:id="@+id/tvSkipSplas"
-        android:layout_width="86dp"
-        android:layout_height="38dp"
-        android:text="Skip"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:typeface="normal"
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/butom_conf_log"
+        android:fontFamily="@font/patua_one"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTexPassword" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="250dp"
-        android:background="#FBFDFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="31dp"
-            android:fontFamily="@font/patua_one"
-            android:text="Make it easier for you"
-            android:textColor="#3B4161"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="33dp"
-            android:src="@drawable/next"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/btNextSplash"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="46dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="45dp"
-            android:fontFamily="@font/patua_one"
-            android:gravity="center_horizontal|top"
-            android:text="We are here ready serve you order 24 hour nonstop, so you can enjoy your holidays"
-            android:textColor="#878F95"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,10 @@ package com.example.dataterminal
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.Fade
+import android.transition.TransitionManager
 import android.view.View
+import android.view.ViewGroup
 import com.example.dataterminal.databinding.ActivitySplashInfoBinding
 
 class SplashInfo : AppCompatActivity() {
@@ -28,6 +31,7 @@ class SplashInfo : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
 
 
     }
