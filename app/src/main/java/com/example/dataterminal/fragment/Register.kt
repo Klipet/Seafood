@@ -20,7 +20,7 @@ class Register : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_spalash_info_free, container, false)
+        return inflater.inflate(R.layout.regiter, container, false)
     }
 
 

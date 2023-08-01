@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Register">
+    tools:context=".fragment.Login" >
+
 
     <EditText
         android:id="@+id/edTexPassword"
@@ -15,7 +18,29 @@
         android:ems="15"
         android:fontFamily="@font/patua_one"
         android:gravity="center_vertical"
-        android:hint="Create a Username"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:scrollbarSize="15sp"
+        android:textAlignment="center"
+        android:textColor="#6E7191"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edUserName"
+        tools:ignore="RtlCompat" />
+
+    <EditText
+        android:id="@+id/edUserName"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_text"
+        android:ems="15"
+        android:fontFamily="@font/patua_one"
+        android:gravity="center_vertical"
+        android:hint="Username"
         android:inputType="text"
         android:scrollbarSize="15sp"
         android:textAlignment="center"
@@ -27,60 +52,21 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlCompat" />
 
-    <EditText
-        android:id="@+id/edUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/edit_text"
-        android:ems="15"
-        android:fontFamily="@font/patua_one"
-        android:gravity="center_vertical"
-        android:hint="Confirm Password"
-        android:inputType="text"
-        android:scrollbarSize="15sp"
-        android:textAlignment="center"
-        android:textColor="#6E7191"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itCrPassword"
-        tools:ignore="RtlCompat" />
-
-    <EditText
-        android:id="@+id/itCrPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/edit_text"
-        android:ems="15"
-        android:fontFamily="@font/patua_one"
-        android:gravity="center_vertical"
-        android:hint="Create a Password"
-        android:inputType="text"
-        android:scrollbarSize="15sp"
-        android:textAlignment="center"
-        android:textColor="#6E7191"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edTexPassword"
-        tools:ignore="RtlCompat" />
-
     <Button
         android:id="@+id/btLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/butom_conf_log"
+        android:clickable="true"
         android:fontFamily="@font/patua_one"
-        android:text="Create Account"
+        android:text="@string/Login"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edUserName" />
+        app:layout_constraintTop_toBottomOf="@+id/edTexPassword"
+        android:focusable="true" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,5 +6,6 @@
     <string name="additional_information_provided_here">Additional information provided here.</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="Login">Login</string>
     />
 </resources>
