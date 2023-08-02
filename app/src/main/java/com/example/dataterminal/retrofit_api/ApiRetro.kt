@@ -8,5 +8,5 @@ import retrofit2.http.POST
 interface ApiRetro {
 
     @POST("auth/login")
-    fun auth(@Body autRequest: AutRequest): User
+    suspend fun auth(@Body autRequest: AutRequest): User
 }

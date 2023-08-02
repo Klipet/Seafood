@@ -67,6 +67,7 @@
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edTexPassword"
-        android:focusable="true" />
+        android:focusable="true"
+        tools:ignore="UsingOnClickInXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
