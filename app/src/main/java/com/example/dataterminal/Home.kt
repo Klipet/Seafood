@@ -13,9 +13,9 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         setContentView(binding.root)
 
-        val imgInfo = intent.getStringExtra("im")
-        Picasso.get().load(imgInfo).into(binding.imPhoto)
-        binding.tvHi.text = intent.getStringExtra("name")
+     //   val imgInfo = intent.getStringExtra("image")
+     //   Picasso.get().load(imgInfo).into(binding.imPhoto)
+     //   binding.tvHi.text = intent.getStringExtra("user")
 
     }
 }

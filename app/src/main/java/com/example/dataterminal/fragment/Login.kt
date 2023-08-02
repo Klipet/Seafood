@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.dataterminal.Home
@@ -25,8 +26,10 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Exception
 
 
+@Suppress("SENSELESS_COMPARISON", "NAME_SHADOWING")
 class Login : Fragment() {
     private lateinit var api: RetrofitApi
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,32 +47,50 @@ class Login : Fragment() {
         val btLogin = v.findViewById<Button>(R.id.btLogin)
         val login = v.findViewById<EditText>(R.id.edUserName)
         val password = v.findViewById<EditText>(R.id.edTexPassword)
-        btLogin.setOnClickListener {
-            logIn(login.toString(), password.toString())
-        }
+     try {
+
+         btLogin.setOnClickListener {
+       //      logIn(login.toString(),
+       //          password.toString())
+             val intent = Intent(activity, Home::class.java)
+             startActivity(intent)
+         }
+     } catch (e: Exception){
+         showToast( "Error: ${e.message}", Toast.LENGTH_LONG)
+     }
         return v
 
     }
 
     fun logIn(userName: String, password: String){
 
-        lifecycleScope.launch(Dispatchers.IO) {
-            val response = RetrofitApi.api.auth(
-                AutRequest(
-                    userName,
-                    password
+        try {
+            lifecycleScope.launch(Dispatchers.IO) {
+                var response = RetrofitApi.api.auth(
+                    AutRequest(
+                        userName,
+                        password
+                    )
                 )
-            )
-            if (response.firstName != null){
-                val userName = response.firstName.toString()
-                val image = response.image.toString()
-                val intent = Intent(activity, Home::class.java)
-                intent.putExtra("image", image.toString())
-                intent.putExtra("user", userName.toString())
-                startActivity(intent)
-            }else{
-                Log.e(TAG, "Ошибка запроса POST: ${response}")
+                if (response.token != null) {
+                    val userName = response.firstName.toString()
+                    val image = response.image.toString()
+                    val intent = Intent(activity, Home::class.java)
+                    intent.putExtra("image", image.toString())
+                    intent.putExtra("user", userName.toString())
+                    startActivity(intent)
+                } else {
+                    Log.e(TAG, "Ошибка запроса POST: ${response}")
+                }
             }
+        }catch (e: Exception){
+            showToast( "Error: ${e.message}", Toast.LENGTH_LONG)
+        }
+
+    }
+    private fun showToast(message: String, duration: Int) {
+        context?.let {
+            Toast.makeText(it, message, duration).show()
         }
     }
 }
