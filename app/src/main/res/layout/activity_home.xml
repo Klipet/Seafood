@@ -17,17 +17,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imPhoto"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/image_circk"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo_smal" />
-
-        <ImageView
             android:id="@+id/imageView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,12 +30,11 @@
             android:id="@+id/tvHi"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="Hallo, Tommy"
             android:textColor="#082431"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/imPhoto"
-            app:layout_constraintTop_toBottomOf="@+id/imPhoto" />
+            app:layout_constraintStart_toStartOf="@+id/imageFilterView"
+            app:layout_constraintTop_toBottomOf="@+id/imageFilterView" />
 
         <TextView
             android:id="@+id/textView7"
@@ -88,6 +76,16 @@
             app:layout_constraintTop_toTopOf="@+id/imageView9"
             app:srcCompat="@drawable/search" />
 
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/imageFilterView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/circle" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -123,7 +121,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         app:layout_constraintVertical_bias="0.0">
@@ -149,7 +147,7 @@
                 android:id="@+id/imageButton2"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="30dp"
                 android:scrollbarSize="24dp"
                 android:src="@drawable/home"
                 app:layout_constraintBottom_toBottomOf="parent"

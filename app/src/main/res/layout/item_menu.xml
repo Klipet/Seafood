@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="10dp"
     android:background="#A83131">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,8 +54,8 @@
             android:rating="4"
 
             android:requiresFadingEdge="horizontal"
-            android:scaleX="0.4"
-            android:scaleY="0.5"
+            android:scaleX="0.7"
+            android:scaleY="0.4"
 
             android:stepSize="1"
             android:verticalScrollbarPosition="left"
