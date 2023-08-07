@@ -1,14 +1,14 @@
 package com.example.dataterminal
 
-import android.app.Fragment
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
 import com.example.dataterminal.adapters.VpAdapter
 import com.example.dataterminal.databinding.ActivityLoginRegisterBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class LoginRegister : AppCompatActivity() {
+
     private val tList = listOf(
         "Login",
         "Register"

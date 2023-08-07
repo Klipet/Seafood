@@ -6,6 +6,7 @@
 
 
     </style>
+    @android:style/Theme.Holo.NoActionBar.Fullscreen
 
     <style name="Theme.DataTerminal" parent="Base.Theme.DataTerminal" />
     <drawable name="zastavka">@drawable/astavka</drawable>
