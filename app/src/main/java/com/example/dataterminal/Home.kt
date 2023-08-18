@@ -4,31 +4,21 @@ import android.annotation.SuppressLint
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
 
-import com.example.dataterminal.adapters.ProductAdapter
 import com.example.dataterminal.adapters.TabsAdapter
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import androidx.lifecycle.ReportFragment.Companion.reportFragment
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
-import com.example.dataterminal.data.Category
-import com.example.dataterminal.data.Product
+import com.example.dataterminal.data.CategoryX
 
 import com.example.dataterminal.databinding.ActivityHomeBinding
 import com.example.dataterminal.databinding.ItemMenuBinding
 import com.example.dataterminal.fragment.ProductiaFragment
 import com.example.dataterminal.retrofit_api.RetrofitApi
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.Objects
 
 
 class Home : AppCompatActivity() {
@@ -57,31 +47,24 @@ class Home : AppCompatActivity() {
 
      fun getCategory() = with (binding) {
 
+         lifecycleScope.launch {
+             val category = RetrofitApi.api.getAllCategory()
 
-         val category = RetrofitApi.api.getAllCategory()
-         category.enqueue(object : Callback<Category>{
-             override fun onResponse(call: Call<Category>, response: Response<Category>) {
-                 if (response.isSuccessful){
-                     val category = response.body()
-                     if (category != null) {
-                         val categories = listOf( category)
-                         val fragments = categories.map { category ->
-                             ProductiaFragment.newInstance(categories.toString())
-                         }
+             val categories = listOf( category)
+             //val fragments = categories.map { category ->
+             //     ProductiaFragment.newInstance(categories.toString())
+             // }
 
-                         adapterVP = TabsAdapter(this@Home,fragments)
-                         viewPager2 = findViewById(R.id.vp)
-                         viewPager2.adapter = adapterVP
-                         TabLayoutMediator(tabLayout, viewPager2){
-                                 tab, position ->
-                            // tab.text = category[position].category
+             adapterVP = TabsAdapter(this@Home,category)
+             viewPager2 = findViewById(R.id.vp)
+             viewPager2.adapter = adapterVP
+             TabLayoutMediator(tabLayout, viewPager2){
+                     tab, position ->
+                 tab.text = category[position]
+             }.attach()
 
-                                 tab.text = categories[position].category.toString()
+         }
 
-
-                         }.attach()
-
-                     }
 
        //              val grup = response.body()!!.products.groupBy { it.category }
      //                for ((category, products) in grup) {
@@ -96,15 +79,7 @@ class Home : AppCompatActivity() {
      //                    for (product in products) {
      //                        println("  - Продукт: ${product.title}")
 
-                         }
-                     }
 
-
-
-             override fun onFailure(call: Call<Category>, t: Throwable) {
-                 TODO("Not yet implemented")
-             }
-         })
      }
 
 

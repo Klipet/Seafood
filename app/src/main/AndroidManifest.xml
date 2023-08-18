@@ -27,6 +27,9 @@
         android:theme="@style/Base.Theme.DataTerminal"
         tools:targetApi="31">
         <activity
+            android:name=".CardActivity"
+            android:exported="false" />
+        <activity
             android:name=".InfoFood"
             android:exported="false" />
         <activity

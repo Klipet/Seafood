@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.dataterminal.InfoFood
 import com.example.dataterminal.R
 import com.example.dataterminal.adapters.ProductAdapter
+import com.example.dataterminal.data.Product
 import com.example.dataterminal.databinding.FragmentProductiaBinding
 import com.example.dataterminal.retrofit_api.RetrofitApi
 import com.google.android.material.tabs.TabLayoutMediator
@@ -21,6 +22,7 @@ import kotlinx.coroutines.launch
 class ProductiaFragment : Fragment() {
     private lateinit var binding: FragmentProductiaBinding
     private lateinit var adapter: ProductAdapter
+    private lateinit var category: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +34,7 @@ class ProductiaFragment : Fragment() {
 
         binding = FragmentProductiaBinding.inflate(inflater, container, false)
         val view = binding.root
+        category = requireArguments().getString(ARG_CATEGORY)!!
 
         init()
 
@@ -51,6 +54,9 @@ class ProductiaFragment : Fragment() {
     }
     fun init(){
 
+
+
+
         adapter = ProductAdapter{ product ->
 
             val intent = Intent(context, InfoFood::class.java)
@@ -61,12 +67,10 @@ class ProductiaFragment : Fragment() {
         binding.rcViewProductia.layoutManager = GridLayoutManager(context, 2)
         binding.rcViewProductia.adapter = adapter
         CoroutineScope(Dispatchers.Main).launch {
-            val list = RetrofitApi.api.getAllProduct()
+            val list = RetrofitApi.api.getAllProduct(category)
             adapter.submitList(list.products)
         }
     }
-
-
 
 
 }

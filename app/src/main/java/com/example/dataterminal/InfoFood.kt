@@ -1,8 +1,11 @@
 package com.example.dataterminal
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.dataterminal.PostObject.CartMaster
 import com.example.dataterminal.adapters.PhotoRAdapter
+import com.example.dataterminal.data.Product
 import com.example.dataterminal.data.ProductX
 import com.example.dataterminal.databinding.ActivityInfoFoodBinding
 import com.example.dataterminal.retrofit_api.RetrofitApi
@@ -19,6 +22,7 @@ class InfoFood : AppCompatActivity() {
     private lateinit var adapterImage: PhotoRAdapter
     private lateinit var binding: ActivityInfoFoodBinding
     lateinit var sliderView: SliderView
+    private lateinit var cardMaster: CartMaster
 
 
 
@@ -46,6 +50,12 @@ class InfoFood : AppCompatActivity() {
                                 tvDescription.text = response.body()!!.description
                                 tvStock.text = response.body()!!.stock.toString()
                                 tvTitle.text = response.body()!!.title
+                                btAdd.setOnClickListener {
+                                    val intent = Intent(this@InfoFood, CardActivity::class.java)
+                                  //  intent.putExtra("product", response.body())
+                                 //   intent.
+                                //  cardMaster = CartMaster.addToCard()
+                                }
                             }
                         }
                     }
@@ -60,6 +70,8 @@ class InfoFood : AppCompatActivity() {
 
 
         }
+
+
 
     }
 
