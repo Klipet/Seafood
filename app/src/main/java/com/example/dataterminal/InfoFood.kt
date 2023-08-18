@@ -1,17 +1,28 @@
 package com.example.dataterminal
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.dataterminal.adapters.PhotoRAdapter
 import com.example.dataterminal.data.ProductX
 import com.example.dataterminal.databinding.ActivityInfoFoodBinding
 import com.example.dataterminal.retrofit_api.RetrofitApi
+import com.smarteist.autoimageslider.SliderView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class InfoFood : AppCompatActivity() {
+    private lateinit var adapterImage: PhotoRAdapter
     private lateinit var binding: ActivityInfoFoodBinding
+    lateinit var sliderView: SliderView
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityInfoFoodBinding.inflate(layoutInflater)
@@ -19,29 +30,40 @@ class InfoFood : AppCompatActivity() {
         setContentView(binding.root)
 
 
-       val codeAsl =  intent.getStringExtra("code")
-        binding.tvId.text = codeAsl.toString()
-
-        _init_()
-
-
-
-    }
-
-    fun _init_(){
-        val get  = RetrofitApi.api.getProduct(intent.getStringExtra("code").toString())
-        get.enqueue(object : Callback<ProductX>{
-            override fun onResponse(call: Call<ProductX>, response: Response<ProductX>) {
-                if (response.isSuccessful){
-                    binding.tvId.text = response.body()?.description.toString()
+        val code = intent.getStringExtra("code")
+        CoroutineScope(Dispatchers.IO).launch {
+            val productX = RetrofitApi.api.getProduct(code.toString())
+            productX.enqueue(object : Callback<ProductX>{
+                override fun onResponse(call: Call<ProductX>, response: Response<ProductX>) {
+                    if (response.isSuccessful){
+                        adapterImage = PhotoRAdapter()
+                        runOnUiThread {
+                            binding.apply {
+                                val images: List<String> = response.body()!!.images
+                                adapterImage.setImages(images)
+                                sliderT.setSliderAdapter(adapterImage)
+                                sliderT.autoCycleDirection = SliderView.LAYOUT_DIRECTION_LTR
+                                tvDescription.text = response.body()!!.description
+                                tvStock.text = response.body()!!.stock.toString()
+                                tvTitle.text = response.body()!!.title
+                            }
+                        }
+                    }
                 }
-            }
 
-            override fun onFailure(call: Call<ProductX>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
+                override fun onFailure(call: Call<ProductX>, t: Throwable) {
 
-        })
+                }
+
+            })
+
+
+
+        }
+
     }
+
+
+
 
 }

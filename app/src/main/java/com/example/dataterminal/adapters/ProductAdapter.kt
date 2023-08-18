@@ -31,8 +31,6 @@ class ProductAdapter(private val onClick: (ProductX) -> Unit): ListAdapter <Prod
                 binding.cvFoodInfo.setOnClickListener {
                     onClick(productX)
                 }
-
-
         }
 
     }
